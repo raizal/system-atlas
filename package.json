@@ -1,0 +1,71 @@
+{
+  "name": "system-atlas",
+  "version": "0.1.0",
+  "description": "System atlas: one page that maps the projects of a repo and opens each page, route and function as a flow chart. It reads a CodeGraph index.",
+  "license": "MIT",
+  "author": "Raizal I.N. Pregnanta",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raizal/system-atlas.git"
+  },
+  "homepage": "https://github.com/raizal/system-atlas#readme",
+  "bugs": {
+    "url": "https://github.com/raizal/system-atlas/issues"
+  },
+  "keywords": [
+    "architecture",
+    "codegraph",
+    "code-map",
+    "system-map",
+    "visualization",
+    "flow-chart",
+    "dependency-graph",
+    "playwright",
+    "e2e",
+    "tree-sitter",
+    "react-flow",
+    "cli"
+  ],
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "bin": {
+    "atlas": "./bin/atlas.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && vite build",
+    "dev": "vite",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "e2e": "playwright test -c e2e/playwright.config.ts",
+    "atlas": "node bin/atlas.js",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@colbymchenry/codegraph": "1.6.4",
+    "tree-sitter-python": "0.25.0",
+    "tree-sitter-typescript": "0.23.2",
+    "web-tree-sitter": "0.27.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.60.0",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.2.1",
+    "@xyflow/react": "^12.12.1",
+    "elkjs": "^0.12.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.5",
+    "vitest": "^5.1.0"
+  }
+}

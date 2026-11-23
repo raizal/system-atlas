@@ -1,0 +1,1 @@
+{ "name": "shop-core", "type": "module", "main": "./src/index.ts" }
